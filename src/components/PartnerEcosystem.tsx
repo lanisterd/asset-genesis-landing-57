@@ -4,7 +4,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import StoryProtocolLogo from "@/assets/logos/logo-story-protocol.png";
-import AssetMoviesLogo from "@/assets/logos/1assetmovies-logo.png";
 
 // Partner data structure that simulates a CMS collection
 export interface Partner {
@@ -25,7 +24,7 @@ export const partners: Partner[] = [
   },
   {
     name: "1 Asset Movies",
-    logo: AssetMoviesLogo,
+    logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=150&q=80",
     url: "https://1assetmovies.com",
     category_tag: ["Media"]
   },

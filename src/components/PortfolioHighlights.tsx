@@ -2,13 +2,12 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import AssetMoviesLogo from "@/assets/logos/1assetmovies-logo.png";
 
 const projects = [
   {
     venture_name: "1 Asset Movies",
     key_impact: "Web3 streaming rights and fan experiences.",
-    image: AssetMoviesLogo,
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=400&q=80",
     slug: "1-asset-movies",
   },
   {
@@ -70,22 +69,12 @@ const PortfolioHighlights = () => {
                 {isLoading ? (
                   <Skeleton className="w-full h-full" />
                 ) : (
-                  // If 1 Asset Movies, show logo at a good size/fit, else show cover image
-                  p.venture_name === "1 Asset Movies" ? (
-                    <img 
-                      src={p.image} 
-                      alt={p.venture_name} 
-                      className="max-h-28 max-w-[80%] object-contain mx-auto transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <img 
-                      src={p.image} 
-                      alt={p.venture_name} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                      loading="lazy"
-                    />
-                  )
+                  <img 
+                    src={p.image} 
+                    alt={p.venture_name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    loading="lazy"
+                  />
                 )}
               </div>
               <div className="p-5">
