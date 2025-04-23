@@ -1,88 +1,100 @@
+
 import React from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import StoryProtocolLogo from "@/assets/logos/logo-story-protocol.png";
 
-// Partner data structure that simulates a CMS collection
+// Placeholder logo image (replace with real assets as needed)
+const defaultLogo = "https://placehold.co/120x120/FFD700/010c43?text=LOGO";
+
+// Partner data structure updated to match provided CSV/example
 export interface Partner {
   name: string;
   logo: string;
-  url?: string;
+  url: string;
   category_tag: string[];
-  display_priority?: number;
+  display_priority: number;
+  description: string;
+  subpage_content: string;
 }
 
-// Partner data
+// Updated partner data based on user's latest submission
 export const partners: Partner[] = [
   {
-    name: "Story Protocol",
-    logo: StoryProtocolLogo,
-    url: "https://storyprotocol.xyz",
-    category_tag: ["Web3", "Media"]
-  },
-  {
-    name: "1 Asset Movies",
-    logo: "[PLACEHOLDER: 1 Asset Movies Logo]",
-    url: "https://1assetmovies.com",
-    category_tag: ["Media"]
-  },
-  {
     name: "ZeroTo3",
-    logo: "https://images.unsplash.com/photo-1639322537232-5f60e1929841?auto=format&fit=crop&w=150&q=80",
-    url: "https://zeroto3.io",
-    category_tag: ["Web3", "Tech"]
+    logo: defaultLogo,
+    url: "https://zeroto3.com",
+    category_tag: ["Partner", "Legal", "Advisory"],
+    display_priority: 1,
+    description: "Legal & Startup Advisory Studio",
+    subpage_content: "ZeroTo3 provides foundational support for legal structuring and IP development, making it an integral partner for startups navigating early-stage complexities in Web3 and entertainment.",
   },
   {
-    name: "TSL Studios",
-    logo: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?auto=format&fit=crop&w=150&q=80",
-    url: "https://tslstudios.com",
-    category_tag: ["Media"]
+    name: "HashLegal",
+    logo: defaultLogo,
+    url: "https://hashlegal.com",
+    category_tag: ["Partner", "Legal", "Web3"],
+    display_priority: 2,
+    description: "Web3-Native Legal Counsel",
+    subpage_content: "HashLegal delivers cutting-edge legal strategies and compliance solutions for tokenized ecosystems and decentralized platforms.",
   },
   {
-    name: "NC Global",
-    logo: "https://images.unsplash.com/photo-1643104177201-e01a1a87c58f?auto=format&fit=crop&w=150&q=80",
-    url: "https://ncglobal.io",
-    category_tag: ["Fintech"]
+    name: "IXSwap",
+    logo: defaultLogo,
+    url: "https://ixswap.io",
+    category_tag: ["Partner", "Exchange", "DeFi"],
+    display_priority: 3,
+    description: "Decentralized Exchange & Token Liquidity",
+    subpage_content: "IXSwap enables liquidity for tokenized assets through a hybrid liquidity pool and regulatory-first AMM framework.",
   },
   {
-    name: "Kula DAO",
-    logo: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=150&q=80",
-    url: "https://kuladao.xyz",
-    category_tag: ["Web3", "DAO"]
+    name: "Story Protocol",
+    logo: defaultLogo,
+    url: "https://storyprotocol.xyz",
+    category_tag: ["Partner", "IP", "Web3"],
+    display_priority: 4,
+    description: "IP Registry & Licensing Layer",
+    subpage_content: "Story Protocol empowers creators by decentralizing IP rights management using a programmable, transparent IP layer.",
   },
   {
-    name: "CrowdFundJunction",
-    logo: "https://images.unsplash.com/photo-1636632520810-27b466a9494b?auto=format&fit=crop&w=150&q=80",
-    url: "https://crowdfundjunction.com",
-    category_tag: ["Fintech", "Web3"]
+    name: "PEAQ",
+    logo: defaultLogo,
+    url: "https://www.peaq.network",
+    category_tag: ["Partner", "Protocol", "DePIN"],
+    display_priority: 5,
+    description: "DePIN Infrastructure & Protocol Partner",
+    subpage_content: "PEAQ supports the infrastructure backbone for decentralized physical networks, driving real-world asset connectivity at scale.",
   },
   {
-    name: "Ceylon Cash",
-    logo: "https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?auto=format&fit=crop&w=150&q=80",
-    url: "https://ceyloncash.io",
-    category_tag: ["Fintech"]
+    name: "India Blockchain Alliance",
+    logo: defaultLogo,
+    url: "https://www.indiablockchainalliance.org",
+    category_tag: ["Partner", "Policy", "Blockchain Alliance"],
+    display_priority: 6,
+    description: "Policy Advocacy & Ecosystem Network",
+    subpage_content: "IBA connects policymakers, enterprises, and innovators to foster blockchain education, awareness, and adoption in India and beyond.",
   },
   {
-    name: "CW3",
-    logo: "https://images.unsplash.com/photo-1639322537232-5f60e1929841?auto=format&fit=crop&w=150&q=80",
-    url: "https://cw3.network",
-    category_tag: ["Web3"]
+    name: "ICP (Internet Computer Protocol)",
+    logo: defaultLogo,
+    url: "https://internetcomputer.org",
+    category_tag: ["Partner", "Protocol", "Infra"],
+    display_priority: 7,
+    description: "Internet Computer Protocol Ecosystem",
+    subpage_content: "ICP enables scalable, secure, and open internet services through its blockchain-native compute model for smart contracts and dApps.",
   },
   {
-    name: "Singapore FinTech Festival",
-    logo: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=150&q=80",
-    url: "https://singaporefintech.org",
-    category_tag: ["Events", "Fintech"]
+    name: "4+ Ventures",
+    logo: defaultLogo,
+    url: "https://www.4plusventures.com",
+    category_tag: ["Partner", "Web3", "Venture Builder"],
+    display_priority: 8,
+    description: "Technology and Web3 Venture Builder",
+    subpage_content: "4+ Ventures supports the development of Web3-native startups, from ideation to scaling with protocol-native infrastructure and funding.",
   },
-  {
-    name: "GITEX Asia",
-    logo: "https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?auto=format&fit=crop&w=150&q=80",
-    url: "https://gitex.asia",
-    category_tag: ["Events", "Tech"]
-  }
 ];
 
+// Only show by display_priority order, first 9 for marquee, ignore fields not in new list
 const PartnerEcosystem = () => (
   <section className="w-full py-16 bg-gradient-to-br from-white via-yellow-50 to-royalgold/20 animate-fade-section" id="ecosystem">
     <div className="container max-w-6xl mx-auto px-4">
@@ -94,33 +106,39 @@ const PartnerEcosystem = () => (
       </div>
       
       <div className="flex flex-wrap justify-center gap-6 sm:gap-8 py-6">
-        {partners.slice(0, 9).map((partner) => (
-          <TooltipProvider key={partner.name}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <a
-                  href={partner.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center w-32 md:w-40 group"
-                >
-                  <div className="bg-white rounded-xl shadow-md border border-royalgold/10 p-3 w-full h-24 flex items-center justify-center mb-3
-                    hover:shadow-glow-gold hover:border-royalgold/40 transition-all duration-300">
-                    <img 
-                      src={partner.logo} 
-                      alt={`${partner.name} logo`} 
-                      className="max-h-16 max-w-[80%] object-contain mx-auto group-hover:scale-105 transition-transform duration-300" 
-                      loading="lazy"
-                    />
+        {partners
+          .sort((a, b) => a.display_priority - b.display_priority)
+          .slice(0, 9)
+          .map((partner) => (
+            <TooltipProvider key={partner.name}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center w-32 md:w-40 group"
+                  >
+                    <div className="bg-white rounded-xl shadow-md border border-royalgold/10 p-3 w-full h-24 flex items-center justify-center mb-3
+                      hover:shadow-glow-gold hover:border-royalgold/40 transition-all duration-300">
+                      <img 
+                        src={partner.logo} 
+                        alt={`${partner.name} logo`} 
+                        className="max-h-16 max-w-[80%] object-contain mx-auto group-hover:scale-105 transition-transform duration-300" 
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <div>
+                    <p className="font-semibold">{partner.name}</p>
+                    <p className="text-xs text-muted-foreground">{partner.description}</p>
                   </div>
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{partner.name}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        ))}
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ))}
       </div>
 
       <div className="flex justify-center mt-8">

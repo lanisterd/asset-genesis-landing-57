@@ -62,7 +62,9 @@ const EcosystemPartnersPage = () => {
 
           {/* Partners Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {filteredPartners.map((partner) => (
+            {filteredPartners
+              .sort((a, b) => a.display_priority - b.display_priority)
+              .map((partner) => (
               <HoverCard key={partner.name}>
                 <HoverCardTrigger asChild>
                   <a
@@ -92,6 +94,7 @@ const EcosystemPartnersPage = () => {
                             </span>
                           ))}
                         </div>
+                        <div className="mt-2 text-xs text-midnight/60">{partner.description}</div>
                       </CardContent>
                     </Card>
                   </a>
@@ -100,9 +103,11 @@ const EcosystemPartnersPage = () => {
                   <div className="flex justify-between space-x-4">
                     <div>
                       <h4 className="font-semibold">{partner.name}</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
+                      <p className="text-xs text-muted-foreground mt-1 mb-1">
                         {partner.category_tag.join(" • ")}
                       </p>
+                      <div className="mb-2 text-sm">{partner.description}</div>
+                      <div className="text-xs text-midnight/70">{partner.subpage_content}</div>
                       <div className="mt-3">
                         <Button 
                           size="sm" 
