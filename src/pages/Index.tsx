@@ -1,21 +1,28 @@
 
-// 1 Asset Exchange Landing Page
-
+import React from "react";
+import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
 import SolutionsGrid from "@/components/SolutionsGrid";
 import PortfolioHighlights from "@/components/PortfolioHighlights";
 import PartnerEcosystem from "@/components/PartnerEcosystem";
 import FounderHighlight from "@/components/FounderHighlight";
+import ClosingCTA from "@/components/ClosingCTA";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <main className="w-full min-h-screen bg-white font-poppins">
-      <HeroBanner />
-      <SolutionsGrid />
-      <PortfolioHighlights />
-      <PartnerEcosystem />
-      <FounderHighlight />
-    </main>
+    <div className="w-full min-h-screen bg-white font-poppins">
+      <Header />
+      <main>
+        <HeroBanner />
+        <SolutionsGrid />
+        <PortfolioHighlights />
+        <PartnerEcosystem />
+        <FounderHighlight />
+        <ClosingCTA />
+      </main>
+      <Footer />
+    </div>
   );
 };
 
