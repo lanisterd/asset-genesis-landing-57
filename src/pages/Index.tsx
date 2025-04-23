@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
-import SolutionsGrid from "@/components/SolutionsGrid";
+import ServicesGrid from "@/components/ServicesGrid"; // updated import
 import PortfolioHighlights from "@/components/PortfolioHighlights";
 import PartnerEcosystem from "@/components/PartnerEcosystem";
 import FounderHighlight from "@/components/FounderHighlight";
@@ -15,7 +15,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroBanner />
-        <SolutionsGrid />
+        <ServicesGrid />
         <PortfolioHighlights />
         <PartnerEcosystem />
         <FounderHighlight />

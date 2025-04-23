@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,7 +9,7 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", href: "#" },
-    { name: "Solutions", href: "#solutions" }, // Confirming "Solutions" label
+    { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Partners", href: "#ecosystem" },
     { name: "About", href: "#about" },
