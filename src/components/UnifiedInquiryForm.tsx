@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -67,12 +68,18 @@ const formSchema = z.object({
   
   inquiryPurpose: z.enum(["newsletter", "media", "general", "speaking", "other"]).optional(),
   message: z.string().optional(),
+  
+  // Add isHuman field to the schema
+  isHuman: z.boolean().refine(val => val === true, {
+    message: "Please confirm you are human"
+  })
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 const defaultValues: Partial<FormValues> = {
   inquiryType: "general",
+  isHuman: false,
 };
 
 interface UnifiedInquiryFormProps {
@@ -91,7 +98,6 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
       ...defaultValues,
       inquiryType: preSelectedType || defaultValues.inquiryType,
       ventureName: ventureName || undefined,
-      isHuman: false,
     },
   });
   
