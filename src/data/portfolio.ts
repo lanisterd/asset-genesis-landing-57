@@ -1,4 +1,3 @@
-
 // Portfolio Data Types
 export interface PortfolioItem {
   venture_name: string;
@@ -6,7 +5,7 @@ export interface PortfolioItem {
   tagline: string;
   website: string;
   sectors: string[];
-  stage: "Idea" | "MVP" | "Funded" | "Launched";
+  stage: "Idea" | "MVP" | "Funded" | "Launched" | "Closed MVP";
   tech_stack: string[];
   launch_year?: number;
   key_impact: string;
@@ -19,8 +18,8 @@ export interface PortfolioItem {
     stats: { label: string; value: string }[];
     testimonials?: { quote: string; author: string; role?: string }[];
   };
-  status: "live" | "coming-soon";
-  color?: string; // For category-based styling
+  status: "live" | "coming-soon" | "incubation-in-progress" | "graduated" | "mvp-in-progress";
+  color?: string;
 }
 
 // Portfolio Items Data
@@ -28,232 +27,226 @@ export const portfolioItems: PortfolioItem[] = [
   {
     venture_name: "1 Asset Labs",
     slug: "1-asset-labs",
-    tagline: "Internal Venture Builder for MVPs and Agentic AI Products",
-    website: "https://1assetlabs.com",
-    sectors: ["Tech", "Innovation", "Venture Studio"],
+    tagline: "Internal Product Studio for MVPs and Agentic AI Products",
+    website: "https://1assetlabs.xyz",
+    sectors: ["Tech", "Innovation", "Product Studio"],
     stage: "Launched",
     tech_stack: ["AI", "Web3", "MVP Development"],
-    launch_year: 2023,
+    launch_year: 2024,
     key_impact: "Rapid prototype development and AI-enabled product launching",
     modules_used: ["Agentic AI", "No-code Builders", "Web3 Infrastructure"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80",
-    description: "1 Asset Labs serves as the internal venture studio for rapidly developing and testing new product concepts with a focus on agentic AI and blockchain technologies.",
-    challenge_opportunity: "Traditional product development cycles are too slow for emerging tech markets. 1 Asset Labs creates rapid prototypes that can be tested and scaled within weeks instead of months.",
-    solution_stack: ["No-code MVP builders", "Agentic AI integration", "Token-ready architecture", "User testing frameworks"],
+    description: "1 Asset Labs is our internal studio for building MVPs and bringing agentic AI products to market faster.",
+    challenge_opportunity: "Traditional product cycles are slow; this studio reduces go-to-market time.",
+    solution_stack: ["No-code MVPs", "Agentic AI", "Token architecture", "User testing"],
     results: {
       stats: [
         { label: "Products Launched", value: "12+" },
-        { label: "Average MVP Timeline", value: "3 weeks" },
+        { label: "Average Build Time", value: "3 weeks" },
         { label: "Success Rate", value: "73%" }
       ],
       testimonials: [
-        { quote: "The Labs team cut our go-to-market time in half while adding AI capabilities we hadn't even considered.", author: "Internal Product Lead", role: "Partner" }
+        { quote: "The Labs team cut our go-to-market time in half...", author: "David", role: "VAMP Production" }
       ]
     },
     status: "live",
-    color: "#FFC107" // Gold/yellow for innovation
+    color: "#FFC107"
   },
   {
     venture_name: "Expert Circles",
     slug: "expert-circles",
-    tagline: "Tokenized Expert Economy Platform",
-    website: "https://expertcircles.com",
-    sectors: ["Knowledge Economy", "Creator Tools", "Web3"],
+    tagline: "Monetization Expert Economy Platform",
+    website: "https://expert-circles.com/",
+    sectors: ["Knowledge Economy", "Creator Tools", "GenAI", "IP"],
     stage: "MVP",
     tech_stack: ["Tokenization", "Marketplace", "Content Management"],
-    launch_year: 2023,
-    key_impact: "Tokenized knowledge economy built for experts, coaches, and educators",
-    modules_used: ["Expert Badge Generator", "Marketplace Infra", "Token Gated Tools"],
+    launch_year: 2025,
+    key_impact: "Monetizing expert knowledge in a decentralized platform",
+    modules_used: ["Expert Badge Generator", "Token Gated Tools"],
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80",
-    description: "Expert Circles empowers knowledge workers, coaches, and educators to tokenize their expertise and monetize their content through a decentralized platform.",
-    challenge_opportunity: "Most experts rely on generic platforms for credibility and monetization. Expert Circles builds native infrastructure that reflects and rewards their value.",
-    solution_stack: ["AI-generated Expert Profiles", "Tokenized IP Registry", "Digital Product Storefronts", "Affiliate/DAO Mechanisms"],
+    description: "Expert Circles lets experts, coaches, and educators monetize their knowledge and own their reputation in a trusted network.",
+    challenge_opportunity: "Traditional platforms don’t reward credibility or ownership.",
+    solution_stack: ["Expert profiles", "IP registry", "storefronts", "DAO"],
     results: {
       stats: [
+        { label: "Members", value: "500+" },
         { label: "Verified Experts", value: "30+" },
-        { label: "Pre-Seed Revenue", value: "$15K+" },
-        { label: "Founding NFT", value: "Sold Out" }
+        { label: "Pre-Seed Success", value: "Yes" }
       ],
       testimonials: [
-        { quote: "This is Shopify for the expert economy. Beautiful, flexible, and future-proof.", author: "Early Expert Circle Member" }
+        { quote: "This is Shopify for the expert economy.", author: "Founding Member" }
       ]
     },
     status: "live",
-    color: "#9C27B0" // Purple for knowledge
+    color: "#9C27B0"
   },
   {
     venture_name: "1 Asset Fan Club (DAO)",
     slug: "1-asset-fan-club",
     tagline: "Decentralized Fan Engagement & Token Utility Layer",
-    website: "https://1assetfanclub.com",
+    website: "https://1assetmovies.xyz",
     sectors: ["Community", "DAO", "Entertainment"],
-    stage: "MVP",
+    stage: "Closed MVP",
     tech_stack: ["DAO Tools", "Token Governance", "Community Management"],
-    launch_year: 2023,
-    key_impact: "Transforming passive audiences into active stakeholders through decentralized governance",
-    modules_used: ["Token Gating", "DAO Governance", "Reward Systems"],
+    launch_year: 2024,
+    key_impact: "Turning fans into stakeholders",
+    modules_used: ["Token Gating", "DAO Voting", "Reward Systems"],
     image: "https://images.unsplash.com/photo-1496449903678-68ddcb189a24?auto=format&fit=crop&w=500&q=80",
-    description: "1 Asset Fan Club converts traditional fan relationships into active community participation through decentralized governance and token-based rewards.",
-    challenge_opportunity: "Fans want deeper engagement with brands and creators but lack the infrastructure to participate meaningfully. Our DAO layer enables true ownership and governance.",
-    solution_stack: ["Token-based Voting", "Community Treasury", "Tiered Access System", "Cross-platform Integration"],
+    description: "A web3 fan engagement solution that transforms passive fans into token-powered community advocates.",
+    challenge_opportunity: "Fans want ownership and influence.",
+    solution_stack: ["Token voting", "Community treasury", "Tiered access"],
     results: {
       stats: [
-        { label: "Active Members", value: "1,200+" },
-        { label: "Governance Proposals", value: "45+" },
-        { label: "Avg. Engagement", value: "+220%" }
+        { label: "Production House Partners", value: "Tier 1 Onboarded" }
       ],
       testimonials: [
-        { quote: "Our community transformed from casual followers to strategic partners almost overnight.", author: "Entertainment Partner", role: "Studio Executive" }
+        { quote: "Our community transformed...", author: "Vinoth R", role: "India Markets Director, 1 Asset Movies" }
       ]
     },
     status: "live",
-    color: "#4CAF50" // Green for community
+    color: "#4CAF50"
   },
   {
-    venture_name: "Alpha Capital",
-    slug: "alpha-capital",
+    venture_name: "Alpha Global",
+    slug: "alpha-global",
     tagline: "F&B Digitization & Franchise Enablement",
-    website: "https://alphacapital.com.sa",
+    website: "https://alphaglobal.asia/",
     sectors: ["F&B", "Franchise", "Digitization"],
     stage: "Launched",
-    tech_stack: ["Digital Transformation", "Franchise Management", "Payment Systems"],
-    launch_year: 2022,
-    key_impact: "Modernizing traditional F&B businesses with digital infrastructure and franchise models",
-    modules_used: ["Digital Operations", "Franchise Management", "Automated Workflows"],
+    tech_stack: ["Digital Transformation", "Payment Systems"],
+    launch_year: 2024,
+    key_impact: "Enabled Digital Footprint for Borderless Franchise Licensing",
+    modules_used: ["Franchise Ops", "Workflow Automation"],
     image: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=500&q=80",
-    description: "Alpha Capital brings digital transformation to the food and beverage industry by enabling franchise models and operational efficiency through technology.",
-    challenge_opportunity: "Traditional F&B businesses struggle with digitization and scaling. We provide the infrastructure to transform local successes into franchisable operations.",
-    solution_stack: ["Digital Operations Platform", "Franchise Management Tools", "Brand Standardization", "Multi-location Analytics"],
+    description: "Alpha Global enables digital-native franchises with global ops management and integrated payment layers.",
+    challenge_opportunity: "Traditional F&B models can’t scale digitally.",
+    solution_stack: ["Ops automation", "Analytics", "Brand standardization"],
     results: {
       stats: [
-        { label: "Businesses Transformed", value: "12" },
-        { label: "Revenue Growth", value: "+35%" },
-        { label: "Operational Costs", value: "-22%" }
+        { label: "Revenue Potential Increase", value: "200%" },
+        { label: "Unlocked Digital Revenue Streams", value: "Yes" }
       ],
       testimonials: [
-        { quote: "We went from a local restaurant to a 6-location franchise in 18 months with Alpha's platform.", author: "Restaurant Owner", role: "Client" }
+        { quote: "We realised how being digital native not only increases our revenues, but also gives us access to global investors.", author: "Client" }
       ]
     },
-    status: "live",
-    color: "#FF5722" // Orange for F&B
+    status: "incubation-in-progress",
+    color: "#FF5722"
   },
   {
     venture_name: "RDM Wallet",
     slug: "rdm-wallet",
-    tagline: "Responsible Decision-Making Wallet with Ethical Spending Logic",
-    website: "https://rdmwallet.xyz",
-    sectors: ["FinTech", "Ethical Finance", "SocFi"],
+    tagline: "Ethical Spending Wallet with Consent Layers",
+    website: "",
+    sectors: ["FinTech", "SocFi", "DeSci"],
     stage: "MVP",
-    tech_stack: ["Purpose-Bound Tokens", "Ethics Filtering", "AI Behavior Analytics"],
-    launch_year: 2023,
-    key_impact: "Introduces programmable consent layers for financial decision-making",
-    modules_used: ["Purpose-Bound Tokens", "Ethics Filtering", "AI Behavior Analytics"],
+    tech_stack: ["Purpose-Bound Tokens", "AI Behavior Analytics"],
+    launch_year: 2024,
+    key_impact: "Align spending with values",
+    modules_used: ["Token permissions", "Ethics Filters"],
     image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=500&q=80",
-    description: "RDM Wallet introduces ethical guardrails and programmable consent layers to financial decision-making, allowing users to align spending with their values.",
-    challenge_opportunity: "Traditional wallets facilitate spending, but not mindful spending. RDM Wallet embeds ethical layers and behavioral checks into every transaction.",
-    solution_stack: ["Token permissions", "Ethical guardrails", "Spend recommendations", "Programmable restrictions"],
+    description: "RDM Wallet is built for mindful spending—integrating ethical boundaries and programmable filters directly into transaction flows.",
+    challenge_opportunity: "No existing wallets integrate moral/ethical boundaries.",
+    solution_stack: ["Ethical filters", "programmable restrictions"],
     results: {
       stats: [
-        { label: "Test Users", value: "50" },
-        { label: "Improved Spending Clarity", value: "45%" },
+        { label: "Clarity Improvement", value: "45%" },
         { label: "NGO Interest", value: "Strong" }
       ],
       testimonials: [
-        { quote: "It's not just a wallet. It's an accountability layer for values-driven finance.", author: "Early Tester" }
+        { quote: "It’s not just a wallet...", author: "Early Tester" }
       ]
     },
-    status: "live",
-    color: "#2196F3" // Blue for finance
+    status: "mvp-in-progress",
+    color: "#2196F3"
   },
   {
     venture_name: "BigWater",
     slug: "bigwater",
     tagline: "DePIN-Powered Water Intelligence Protocol",
-    website: "https://bigwater.xyz",
+    website: "https://bigwater.io",
     sectors: ["DePIN", "Sustainability", "Water"],
     stage: "Funded",
-    tech_stack: ["DePIN Stack", "IoT", "Blockchain"],
-    launch_year: 2023,
-    key_impact: "Built a decentralized water intelligence network for equitable water distribution",
-    modules_used: ["DePIN Stack", "Node Rewards", "Governance Tools"],
+    tech_stack: ["IoT", "Blockchain"],
+    launch_year: 2024,
+    key_impact: "Transparent water tracking & optimization",
+    modules_used: ["Node rewards", "Real-time sync"],
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=500&q=80",
-    description: "BigWater creates a decentralized physical infrastructure network (DePIN) for water monitoring, distribution, and governance through tokenized incentives.",
-    challenge_opportunity: "Billions of gallons of water go untracked or wasted due to siloed infrastructure and opaque distribution data. BigWater solves this with on-chain data contribution incentives.",
-    solution_stack: ["Real-time sensor data", "Blockchain sync", "Tokenized incentives", "Verified water footprints"],
+    description: "BigWater is an intelligence protocol and DePIN for tracking, rewarding, and optimizing water equity at scale.",
+    challenge_opportunity: "Billions of gallons go untracked due to siloed systems.",
+    solution_stack: ["Sensor networks", "Tokenized incentives"],
     results: {
       stats: [
-        { label: "Sensor Nodes", value: "20+" },
-        { label: "Water Data Contributions", value: "3K+" },
-        { label: "Protocol Partnerships", value: "Initiated" }
+        { label: "Global Distribution Partnership", value: "Tier 1" }
       ],
       testimonials: [
-        { quote: "We went from isolated water monitoring to a live intelligence layer for water justice.", author: "BigWater Core Contributor" }
+        { quote: "Water justice through real-time intelligence." }
       ]
     },
-    status: "live",
-    color: "#03A9F4" // Light blue for water
+    status: "graduated",
+    color: "#03A9F4"
   },
   {
     venture_name: "1 Asset Movies",
     slug: "1-asset-movies",
     tagline: "Tokenized Film Funding & Fan Equity Marketplace",
-    website: "https://1assetmovies.com",
+    website: "https://1assetmovies.xyz",
     sectors: ["Film", "Entertainment", "Tokenization"],
     stage: "Launched",
-    tech_stack: ["Tokenization", "Fan Engagement", "Revenue Distribution"],
-    launch_year: 2022,
-    key_impact: "Raised $150K+ through fan-tokenized film funding",
-    modules_used: ["Token Vault", "Fan DAO Club", "Revenue Distribution"],
+    tech_stack: ["Token Vaults", "DAO Fan Club"],
+    launch_year: 2024,
+    key_impact: "Bridged Fans directly to movies",
+    modules_used: ["Tokenized IP", "DAO Revenue Distribution"],
     image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80",
-    description: "1 Asset Movies revolutionizes film financing by enabling fans to directly invest in and own a stake in films through tokenization.",
-    challenge_opportunity: "Traditional film financing lacks transparency and excludes fans. We created a token-powered fan investment engine.",
-    solution_stack: ["Tokenized IP Vault", "DAO Fan Club", "Smart Revenue Distribution", "Global Distribution Rights"],
+    description: "1 Asset Movies enables fans to invest, own, and participate in the growth of film and entertainment IPs.",
+    challenge_opportunity: "Film finance is opaque & exclusive.",
+    solution_stack: ["DAO clubs", "Token utility", "Global fan IP funding"],
     results: {
       stats: [
-        { label: "Fans Onboarded", value: "3,000+" },
-        { label: "First-time Investors", value: "80%" },
-        { label: "IPs Pre-funded", value: "2" }
+        { label: "Movie Assets Tokenized", value: "$50 million" },
+        { label: "Top Tier Distributors", value: "Onboarded" },
+        { label: "Production Houses", value: "Onboarded" }
       ],
       testimonials: [
-        { quote: "Tokenizing our story gave us more than capital — it gave us community, purpose, and global reach.", author: "Independent Tamil Producer" }
+        { quote: "Tokenizing our story gave us community & reach." }
       ]
     },
     status: "live",
-    color: "#E91E63" // Pink for entertainment
+    color: "#E91E63"
   },
   {
     venture_name: "1 Asset IP Vault",
     slug: "1-asset-ip-vault",
-    tagline: "Tokenized IP Registry and Licensing Infrastructure",
+    tagline: "Tokenized IP Registry & Licensing Infrastructure (with Story Protocol)",
     website: "",
-    sectors: ["IP Rights", "Legal Tech", "Licensing"],
-    stage: "Idea",
-    tech_stack: ["Smart Contracts", "Rights Management", "Licensing Automation"],
-    key_impact: "Simplifying IP management and licensing through tokenization",
-    modules_used: ["Smart Contracts", "Rights Registry", "Licensing Templates"],
+    sectors: ["IP", "Licensing"],
+    stage: "MVP Development in Progress",
+    tech_stack: ["Smart Contracts", "Licensing Templates"],
+    key_impact: "Simplifies IP ownership and monetization",
+    modules_used: ["IP registry", "Royalty engines"],
     image: "https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=500&q=80",
-    description: "1 Asset IP Vault creates a decentralized registry for intellectual property that simplifies licensing, royalty distribution, and IP management.",
-    challenge_opportunity: "IP rights management is complex and often inaccessible. Our solution streamlines the process through smart contracts and standardized templates.",
-    solution_stack: ["Tokenized IP Registry", "Automated Licensing", "Royalty Distribution", "Rights Verification"],
+    description: "Enabling fair, open, and programmable licensing terms for digital IP, co-developed with Story Protocol.",
+    challenge_opportunity: "Licensing and royalty rights are too complex.",
+    solution_stack: ["Tokenized templates", "Smart contracts"],
     status: "coming-soon",
-    color: "#3F51B5" // Indigo for legal/IP
+    color: "#3F51B5"
   },
   {
     venture_name: "Echelon Productions",
     slug: "echelon-productions",
-    tagline: "Web3-Native Entertainment Studio & Film IP Partner",
+    tagline: "Digitally-Native Entertainment Studio & Film IP Partner",
     website: "",
-    sectors: ["Entertainment", "Production", "Web3"],
-    stage: "Idea",
-    tech_stack: ["Content Production", "IP Management", "Distribution"],
-    key_impact: "Integrating web3 principles into traditional entertainment production",
-    modules_used: ["Production Workflow", "Community Engagement", "IP Management"],
+    sectors: ["Entertainment", "IP"],
+    stage: "MVP Under Development",
+    tech_stack: ["Community Production", "Tokenized Distribution"],
+    key_impact: "Brings Web3 principles to film production",
+    modules_used: ["Content DAO", "IP Management"],
     image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80",
-    description: "Echelon Productions is a web3-native entertainment studio that integrates blockchain technology into traditional film and content production workflows.",
-    challenge_opportunity: "Entertainment production remains siloed and inefficient. Echelon brings web3 principles to streamline collaboration, financing, and distribution.",
-    solution_stack: ["Decentralized Production", "Community-Driven Content", "Token-Powered Distribution", "Cross-Platform IP"],
+    description: "A web3-native studio fusing decentralized production and tokenized creative collaboration.",
+    challenge_opportunity: "Studio financing remains centralized.",
+    solution_stack: ["Decentralized production + creator economy"],
     status: "coming-soon",
-    color: "#9C27B0" // Purple for entertainment
+    color: "#9C27B0"
   }
 ];
 
