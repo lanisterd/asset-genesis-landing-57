@@ -1,10 +1,11 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 type ServiceCardProps = {
   color: string;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: LucideIcon;
   title: string;
   layer: string;
   desc: string;
