@@ -93,8 +93,9 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
   const hasLinkedIn = Boolean(expert.linkedIn);
 
   return (
-    <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg bg-softplatinum border-transparent hover:border-royalgold/20 rounded-2xl relative group hover:shadow-glow-gold">
-      <div className="h-64 relative">
+    <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg bg-softplatinum border-transparent hover:border-royalgold/20 rounded-2xl relative group hover:shadow-glow-gold flex flex-col">
+      {/* Image container with fixed height */}
+      <div className="relative h-64 overflow-hidden">
         <AspectRatio ratio={1 / 1} className="bg-midnight/5">
           <Avatar className="h-full w-full rounded-none">
             {expert.imageSrc ? (
@@ -110,9 +111,10 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
               </AvatarFallback>
             )}
           </Avatar>
-          {/* LinkedIn quick-connect overlay on hover, only if link exists */}
-          {hasLinkedIn && (
-            <div className="absolute inset-0 bg-midnight/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          
+          {/* LinkedIn overlay on hover */}
+          <div className={`absolute inset-0 ${hasLinkedIn ? 'bg-midnight/70' : 'bg-midnight/50'} opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center`}>
+            {hasLinkedIn ? (
               <Button 
                 variant="outline"
                 size="lg"
@@ -123,11 +125,7 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
                   <Linkedin className="mr-2 h-5 w-5" /> Connect
                 </a>
               </Button>
-            </div>
-          )}
-          {/* Disabled button if no LinkedIn (on hover, subtle ghost outline) */}
-          {!hasLinkedIn && (
-            <div className="absolute inset-0 bg-midnight/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            ) : (
               <Button 
                 variant="ghost"
                 size="lg"
@@ -136,13 +134,14 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
               >
                 <Linkedin className="mr-2 h-5 w-5" /> Connect
               </Button>
-            </div>
-          )}
+            )}
+          </div>
         </AspectRatio>
       </div>
       
-      <CardContent className="p-6">
-        <div className="space-y-2">
+      {/* Content container with clean separation from image */}
+      <CardContent className="p-6 flex-grow bg-white z-10">
+        <div className="space-y-3">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-xl text-midnight">{expert.name}</h3>
             {hasLinkedIn && (
@@ -159,7 +158,7 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
             )}
           </div>
           <p className="text-sm font-semibold text-royalgold">{expert.title}</p>
-          <div className="flex items-center pt-2">
+          <div className="flex items-center pt-1">
             <Badge 
               variant="outline" 
               className="bg-transparent border-midnight/20 text-midnight/80"
