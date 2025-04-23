@@ -1,10 +1,10 @@
-
 import React from "react";
+import StoryProtocolLogo from "@/assets/logos/logo-story-protocol.png";
 
 const partners = [
   {
     name: "Story Protocol",
-    logo: "https://images.unsplash.com/photo-1648483943422-74fa3687c314?auto=format&fit=crop&w=150&q=80"
+    logo: StoryProtocolLogo
   },
   {
     name: "IXSwap",
