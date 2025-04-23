@@ -7,7 +7,7 @@ const projects = [
   {
     venture_name: "1 Asset Movies",
     key_impact: "Web3 streaming rights and fan experiences.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=400&q=80",
+    image: "[PLACEHOLDER: 1 Asset Movies Image]",
     slug: "1-asset-movies",
   },
   {

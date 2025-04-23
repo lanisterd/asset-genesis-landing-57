@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ArrowRight } from "lucide-react";
@@ -24,7 +23,7 @@ export const partners: Partner[] = [
   },
   {
     name: "1 Asset Movies",
-    logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=150&q=80",
+    logo: "[PLACEHOLDER: 1 Asset Movies Logo]",
     url: "https://1assetmovies.com",
     category_tag: ["Media"]
   },
