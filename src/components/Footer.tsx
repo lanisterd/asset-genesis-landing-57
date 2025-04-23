@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -44,10 +43,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Services</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="text-white/70 hover:text-royalgold transition-colors">Digital Foundations</a></li>
-              <li><a href="#" className="text-white/70 hover:text-royalgold transition-colors">MVP Development</a></li>
-              <li><a href="#" className="text-white/70 hover:text-royalgold transition-colors">Token Infrastructure</a></li>
-              <li><a href="#" className="text-white/70 hover:text-royalgold transition-colors">Ecosystem Integration</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-royalgold transition-colors">AgentOps</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-royalgold transition-colors">RapidStack</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-royalgold transition-colors">TokenCore</a></li>
             </ul>
           </div>
 
