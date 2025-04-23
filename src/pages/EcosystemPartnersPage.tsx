@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { partners, Partner } from "@/components/PartnerEcosystem";
@@ -16,6 +15,9 @@ const getAllCategories = () => {
   return Array.from(categories);
 };
 
+const CHAT_WIDGET_SCRIPT = `<script src="https://www.chatbase.co/embed.min.js" chatbotId="YOUR-CHATBASE-ID" domain="yourdomain.com" defer></script>`;
+// Replace YOUR-CHATBASE-ID with your bot's ID from Chatbase dashboard
+
 const EcosystemPartnersPage = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const categories = getAllCategories();
@@ -25,8 +27,50 @@ const EcosystemPartnersPage = () => {
     ? partners.filter(partner => partner.category_tag.includes(activeFilter)) 
     : partners;
 
+  // Inject Chatbase (or other) chat widget script once on mount
+  useEffect(() => {
+    // Prevent duplicate injection
+    if (document.getElementById("co-pilot-chat-widget-script")) return;
+
+    const script = document.createElement("script");
+    script.id = "co-pilot-chat-widget-script";
+    script.defer = true;
+
+    // YOUR EMBED CODE; for Chatbase:
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.setAttribute("chatbotId", "YOUR-CHATBASE-ID"); // Change to your real chatbot ID
+    script.setAttribute("domain", window.location.hostname);
+
+    document.body.appendChild(script);
+
+    // Clean up script on unmount (optional)
+    return () => {
+      script.remove();
+    };
+  }, []);
+
   return (
     <div className="w-full min-h-screen bg-white font-poppins">
+      {/* Floating Co-Pilot Button */}
+      <button
+        type="button"
+        onClick={() => {
+          // For Chatbase sidebar: open on click (if needed)
+          // Most widgets open when button is clicked or can be auto-opened if configured in Chatbase.
+          // Here, we simulate a click if their global function is available.
+          if (window.ChatbaseWidget) {
+            window.ChatbaseWidget.open();
+          }
+        }}
+        className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-full shadow-lg text-base font-semibold bg-royalgold text-midnight hover:shadow-glow-gold animate-fade-in"
+        style={{ border: "2px solid #010c43" }}
+        aria-label="Open Co-Pilot chat"
+      >
+        🧭 Ask the Co-Pilot
+      </button>
+      {/* --- Chatbase script will add its own widget; our button helps trigger opening if desired --- */}
+
+      {/* Page Content */}
       <Header />
       <main className="pt-24 pb-16">
         <section className="container max-w-6xl mx-auto px-4">
