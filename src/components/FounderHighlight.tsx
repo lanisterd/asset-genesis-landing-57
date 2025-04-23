@@ -26,16 +26,17 @@ const FounderHighlight = () => (
           rel="noopener noreferrer"
           className="block w-64 h-64 relative rounded-xl overflow-hidden 
             bg-gradient-to-br from-white/40 to-royalgold/40 
-            border-4 border-royalgold/30 
+            border-4 border-royalgold/50 
             shadow-glow-gold
             transition-all duration-300 
-            hover:border-royalgold/50 
-            hover:shadow-[0_0_20px_rgba(255,215,0,0.5)]"
+            hover:border-royalgold
+            hover:shadow-[0_0_28px_rgba(255,215,0,0.68)]"
         >
           <img 
-            src="/path/to/uploaded/image" 
+            src="/lovable-uploads/e62b98bf-311b-42a7-938b-f49f82269ca3.png"
             alt="Aneesha Reihana, Founder" 
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top rounded-xl"
+            loading="lazy"
           />
         </a>
       </div>
