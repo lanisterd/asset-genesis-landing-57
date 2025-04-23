@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -46,7 +45,6 @@ import {
   DialogTitle
 } from "@/components/ui/dialog";
 
-// Form schema
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
@@ -56,35 +54,25 @@ const formSchema = z.object({
   telegram: z.string().optional(),
   inquiryType: z.enum(["bookCall", "exploreServices", "portfolio", "general"]),
   
-  // Book a Call fields
   preferredDate: z.date().optional(),
   callObjective: z.enum(["productDemo", "partnerDiscussion", "technicalAdvice", "other"]).optional(),
   
-  // Explore Services fields
   serviceInterest: z.enum(["AgentOps", "RapidStack", "TokenCore"]).optional(),
   orgType: z.enum(["Startup", "DAO", "Enterprise"]).optional(),
   integrationNeeds: z.string().optional(),
   
-  // Portfolio fields
   ventureName: z.string().optional(),
   applicationType: z.enum(["applying", "exploring"]).optional(),
   pitchDeck: z.string().optional(),
   
-  // General Inquiry fields
   inquiryPurpose: z.enum(["newsletter", "media", "general", "speaking", "other"]).optional(),
   message: z.string().optional(),
-  
-  // Required checkbox
-  isHuman: z.literal(true, {
-    errorMap: () => ({ message: "Please confirm you are human" }),
-  }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 const defaultValues: Partial<FormValues> = {
   inquiryType: "general",
-  isHuman: false,
 };
 
 interface UnifiedInquiryFormProps {
@@ -97,27 +85,24 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [formStep, setFormStep] = useState(0);
 
-  // Initialize form with preselected values if provided
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       ...defaultValues,
       inquiryType: preSelectedType || defaultValues.inquiryType,
       ventureName: ventureName || undefined,
+      isHuman: false,
     },
   });
   
   const inquiryType = form.watch("inquiryType");
 
-  // Handle form submission
   const onSubmit = async (data: FormValues) => {
     try {
-      // Simulate form submission - in a real scenario this would connect to a backend service
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       console.log("Form submitted:", data);
       
-      // Show success message
       setShowSuccessDialog(true);
       form.reset();
     } catch (error) {
@@ -308,7 +293,6 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
 
           {formStep === 1 && (
             <div className="animate-fade-in">
-              {/* Book a Call Section */}
               {inquiryType === "bookCall" && (
                 <>
                   <h3 className="text-xl font-semibold mb-4 text-midnight">Book a Strategy Call</h3>
@@ -380,7 +364,6 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
                 </>
               )}
 
-              {/* Explore Services Section */}
               {inquiryType === "exploreServices" && (
                 <>
                   <h3 className="text-xl font-semibold mb-4 text-midnight">Explore Our Services</h3>
@@ -466,7 +449,6 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
                 </>
               )}
 
-              {/* Portfolio Section */}
               {inquiryType === "portfolio" && (
                 <>
                   <h3 className="text-xl font-semibold mb-4 text-midnight">Portfolio Ventures</h3>
@@ -544,7 +526,6 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
                 </>
               )}
 
-              {/* General Inquiry Section */}
               {inquiryType === "general" && (
                 <>
                   <h3 className="text-xl font-semibold mb-4 text-midnight">General Inquiry</h3>
@@ -594,7 +575,6 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
                 </>
               )}
 
-              {/* Final section with human check and submit button */}
               <div className="mt-8 border-t pt-6">
                 <FormField
                   control={form.control}
@@ -640,7 +620,6 @@ export function UnifiedInquiryForm({ preSelectedType, ventureName }: UnifiedInqu
         </form>
       </Form>
 
-      {/* Success Dialog */}
       <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
