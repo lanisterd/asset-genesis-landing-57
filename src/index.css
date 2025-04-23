@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* App-wide Fade-in for Landing Sections */
+@layer components {
+  .animate-fade-section {
+    animation: fade-section 0.8s cubic-bezier(0.16,1,0.3,1) both;
+  }
+}
+
 @layer base {
   :root {
+    font-family: "Poppins", sans-serif;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -97,5 +105,6 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
   }
 }

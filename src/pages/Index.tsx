@@ -1,13 +1,21 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+// 1 Asset Exchange Landing Page
+
+import HeroBanner from "@/components/HeroBanner";
+import SolutionsGrid from "@/components/SolutionsGrid";
+import PortfolioHighlights from "@/components/PortfolioHighlights";
+import PartnerEcosystem from "@/components/PartnerEcosystem";
+import FounderHighlight from "@/components/FounderHighlight";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="w-full min-h-screen bg-white font-poppins">
+      <HeroBanner />
+      <SolutionsGrid />
+      <PortfolioHighlights />
+      <PartnerEcosystem />
+      <FounderHighlight />
+    </main>
   );
 };
 
