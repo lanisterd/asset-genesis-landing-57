@@ -65,7 +65,7 @@ export const portfolioItems: PortfolioItem[] = [
     modules_used: ["Expert Badge Generator", "Token Gated Tools"],
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80",
     description: "Expert Circles lets experts, coaches, and educators monetize their knowledge and own their reputation in a trusted network.",
-    challenge_opportunity: "Traditional platforms don’t reward credibility or ownership.",
+    challenge_opportunity: "Traditional platforms don't reward credibility or ownership.",
     solution_stack: ["Expert profiles", "IP registry", "storefronts", "DAO"],
     results: {
       stats: [
@@ -119,7 +119,7 @@ export const portfolioItems: PortfolioItem[] = [
     modules_used: ["Franchise Ops", "Workflow Automation"],
     image: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=500&q=80",
     description: "Alpha Global enables digital-native franchises with global ops management and integrated payment layers.",
-    challenge_opportunity: "Traditional F&B models can’t scale digitally.",
+    challenge_opportunity: "Traditional F&B models can't scale digitally.",
     solution_stack: ["Ops automation", "Analytics", "Brand standardization"],
     results: {
       stats: [
@@ -154,7 +154,7 @@ export const portfolioItems: PortfolioItem[] = [
         { label: "NGO Interest", value: "Strong" }
       ],
       testimonials: [
-        { quote: "It’s not just a wallet...", author: "Early Tester" }
+        { quote: "It's not just a wallet...", author: "Early Tester" }
       ]
     },
     status: "mvp-in-progress",
@@ -180,7 +180,7 @@ export const portfolioItems: PortfolioItem[] = [
         { label: "Global Distribution Partnership", value: "Tier 1" }
       ],
       testimonials: [
-        { quote: "Water justice through real-time intelligence." }
+        { quote: "Water justice through real-time intelligence.", author: "Project Lead" }
       ]
     },
     status: "graduated",
@@ -208,7 +208,7 @@ export const portfolioItems: PortfolioItem[] = [
         { label: "Production Houses", value: "Onboarded" }
       ],
       testimonials: [
-        { quote: "Tokenizing our story gave us community & reach." }
+        { quote: "Tokenizing our story gave us community & reach.", author: "Film Producer" }
       ]
     },
     status: "live",
@@ -220,7 +220,7 @@ export const portfolioItems: PortfolioItem[] = [
     tagline: "Tokenized IP Registry & Licensing Infrastructure (with Story Protocol)",
     website: "",
     sectors: ["IP", "Licensing"],
-    stage: "MVP Development in Progress",
+    stage: "MVP",
     tech_stack: ["Smart Contracts", "Licensing Templates"],
     key_impact: "Simplifies IP ownership and monetization",
     modules_used: ["IP registry", "Royalty engines"],
@@ -237,7 +237,7 @@ export const portfolioItems: PortfolioItem[] = [
     tagline: "Digitally-Native Entertainment Studio & Film IP Partner",
     website: "",
     sectors: ["Entertainment", "IP"],
-    stage: "MVP Under Development",
+    stage: "MVP",
     tech_stack: ["Community Production", "Tokenized Distribution"],
     key_impact: "Brings Web3 principles to film production",
     modules_used: ["Content DAO", "IP Management"],
