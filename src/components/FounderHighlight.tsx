@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Image } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FounderHighlight = () => (
   <section className="w-full py-20 bg-midnight text-white animate-fade-section" id="about">
@@ -15,8 +15,11 @@ const FounderHighlight = () => (
         </div>
         <Button
           className="mt-4 px-6 py-5 text-base font-montserrat uppercase tracking-wide text-midnight rounded-full bg-royalgold hover:shadow-glow-gold hover:bg-yellow-200 transition-all duration-200"
+          asChild
         >
-          Read Our Story
+          <Link to="/hall-of-experts">
+            Learn More About Our Team
+          </Link>
         </Button>
       </div>
       <div className="flex-1 flex justify-center md:justify-end order-1 md:order-2">

@@ -10,6 +10,7 @@ import EcosystemPartnersPage from "./pages/EcosystemPartnersPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import PortfolioDetailPage from "./pages/PortfolioDetailPage";
 import ContactPage from "./pages/ContactPage";
+import HallOfExpertsPage from "./pages/HallOfExpertsPage";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/hall-of-experts" element={<HallOfExpertsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
