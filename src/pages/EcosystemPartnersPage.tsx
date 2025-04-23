@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -5,6 +6,15 @@ import { partners, Partner } from "@/components/PartnerEcosystem";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+
+// Add this type declaration to inform TypeScript about the Chatbase widget
+declare global {
+  interface Window {
+    ChatbaseWidget?: {
+      open: () => void;
+    };
+  }
+}
 
 // Extract unique categories from partners
 const getAllCategories = () => {
