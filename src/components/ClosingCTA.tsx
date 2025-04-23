@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const ClosingCTA = () => {
   return (
@@ -14,17 +15,21 @@ const ClosingCTA = () => {
           Ready to build a future-ready venture? Whether you're just starting out or looking to scale, we have the infrastructure you need.
         </p>
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
-          <Button
-            className="px-8 py-6 text-base rounded-full font-semibold font-poppins shadow-gold bg-royalgold text-midnight hover:shadow-glow-gold transition-all duration-200"
-          >
-            Book a Strategy Call
-          </Button>
-          <Button
-            variant="outline"
-            className="px-8 py-6 text-base border-2 border-royalgold rounded-full font-semibold font-poppins text-midnight hover:bg-royalgold/10 transition-all duration-200"
-          >
-            Apply for Incubation
-          </Button>
+          <Link to="/contact?type=bookCall">
+            <Button
+              className="px-8 py-6 text-base rounded-full font-semibold font-poppins shadow-gold bg-royalgold text-midnight hover:shadow-glow-gold transition-all duration-200"
+            >
+              Book a Strategy Call
+            </Button>
+          </Link>
+          <Link to="/contact?type=portfolio">
+            <Button
+              variant="outline"
+              className="px-8 py-6 text-base border-2 border-royalgold rounded-full font-semibold font-poppins text-midnight hover:bg-royalgold/10 transition-all duration-200"
+            >
+              Apply for Incubation
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -15,6 +15,7 @@ const Header = () => {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Partners", href: "#ecosystem" },
     { name: "About", href: "#about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -45,11 +46,13 @@ const Header = () => {
               </Link>
             )
           )}
-          <Button
-            className="ml-4 px-5 py-2 text-sm rounded-full font-semibold bg-royalgold text-midnight hover:shadow-gold transition-all duration-200"
-          >
-            Book a Call
-          </Button>
+          <Link to="/contact">
+            <Button
+              className="ml-4 px-5 py-2 text-sm rounded-full font-semibold bg-royalgold text-midnight hover:shadow-gold transition-all duration-200"
+            >
+              Book a Call
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Navigation Trigger */}
@@ -86,11 +89,13 @@ const Header = () => {
                 </Link>
               )
             )}
-            <Button
-              className="mt-2 px-5 py-2 text-sm rounded-full font-semibold bg-royalgold text-midnight hover:shadow-gold transition-all duration-200 w-full"
-            >
-              Book a Call
-            </Button>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+              <Button
+                className="mt-2 px-5 py-2 text-sm rounded-full font-semibold bg-royalgold text-midnight hover:shadow-gold transition-all duration-200 w-full"
+              >
+                Book a Call
+              </Button>
+            </Link>
           </nav>
         </div>
       )}

@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroBanner = () => {
   // Smooth scroll function
@@ -31,11 +32,13 @@ const HeroBanner = () => {
           Whether you're a founder, a creator, or a capital-ready brand — <span className="font-semibold text-midnight">we help you digitize, automate, and tokenize</span> with agentic AI and token-native tools.
         </p>
         <div className="flex flex-wrap gap-5 justify-center mt-4">
-          <Button
-            className="px-8 py-6 text-base rounded-full font-semibold font-poppins shadow-gold bg-royalgold text-midnight hover:shadow-glow-gold transition-all duration-300"
-          >
-            Start With a Call
-          </Button>
+          <Link to="/contact?type=bookCall">
+            <Button
+              className="px-8 py-6 text-base rounded-full font-semibold font-poppins shadow-gold bg-royalgold text-midnight hover:shadow-glow-gold transition-all duration-300"
+            >
+              Start With a Call
+            </Button>
+          </Link>
           <Button
             variant="outline"
             className="px-8 py-6 text-base border-2 border-royalgold rounded-full font-semibold font-poppins text-midnight hover:bg-royalgold/10 transition-all duration-300"

@@ -1,10 +1,14 @@
 
 import React from "react";
+import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { UnifiedInquiryForm } from "@/components/UnifiedInquiryForm";
 
 const ContactPage = () => {
+  const [searchParams] = useSearchParams();
+  const inquiryType = searchParams.get("type") as "bookCall" | "exploreServices" | "portfolio" | "general" | undefined;
+
   return (
     <div className="w-full min-h-screen bg-white font-poppins">
       <Header />
@@ -20,7 +24,7 @@ const ContactPage = () => {
             </p>
           </div>
           
-          <UnifiedInquiryForm />
+          <UnifiedInquiryForm preSelectedType={inquiryType} />
         </div>
       </main>
       <Footer />

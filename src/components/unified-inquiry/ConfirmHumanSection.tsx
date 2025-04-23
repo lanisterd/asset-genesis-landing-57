@@ -25,7 +25,7 @@ const ConfirmHumanSection: React.FC<Props> = ({ control }) => (
             I am human *
           </FormLabel>
         </div>
-        <FormMessage />
+        <FormMessage className="mt-0" />
       </FormItem>
     )}
   />
