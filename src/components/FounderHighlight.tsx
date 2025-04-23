@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Image } from "lucide-react";
 
 const FounderHighlight = () => (
   <section className="w-full py-20 bg-midnight text-white animate-fade-section" id="about">
@@ -19,18 +20,24 @@ const FounderHighlight = () => (
         </Button>
       </div>
       <div className="flex-1 flex justify-center md:justify-end order-1 md:order-2">
-        <div className="w-64 h-64 relative rounded-xl overflow-hidden 
-          bg-gradient-to-br from-white/40 to-royalgold/40 
-          border-4 border-royalgold/30 
-          shadow-glow-gold
-          transition-all duration-300 
-          hover:border-royalgold/50 
-          hover:shadow-[0_0_20px_rgba(255,215,0,0.5)]">
-          {/* Placeholder for founder image */}
-          <div className="absolute inset-0 flex items-center justify-center bg-midnight/5">
-            <span className="font-poppins text-6xl text-midnight/20">AR</span>
-          </div>
-        </div>
+        <a 
+          href="https://www.linkedin.com/in/aneeshareihana/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block w-64 h-64 relative rounded-xl overflow-hidden 
+            bg-gradient-to-br from-white/40 to-royalgold/40 
+            border-4 border-royalgold/30 
+            shadow-glow-gold
+            transition-all duration-300 
+            hover:border-royalgold/50 
+            hover:shadow-[0_0_20px_rgba(255,215,0,0.5)]"
+        >
+          <img 
+            src="/path/to/uploaded/image" 
+            alt="Aneesha Reihana, Founder" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </a>
       </div>
     </div>
   </section>
