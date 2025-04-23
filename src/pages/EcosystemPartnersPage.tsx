@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { partners, Partner } from "@/components/PartnerEcosystem";
+import { partners } from "@/components/PartnerEcosystem";
 import EcosystemPartnerFilter from "@/components/ecosystem/EcosystemPartnerFilter";
 import EcosystemPartnerGrid from "@/components/ecosystem/EcosystemPartnerGrid";
 import CoPilotButton from "@/components/ecosystem/CoPilotButton";
